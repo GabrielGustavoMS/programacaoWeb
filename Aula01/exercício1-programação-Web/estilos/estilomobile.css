@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    border: 0;
+    color: #fff;
+    font-family: 'Uncial+Antiqua',sans-serif;
+    text-align: justify;
+}
+p{
+    text-indent: 15px;
+    font-size: 1.5em;
+    margin: 0 15px;
+    
+}
+h1{
+    font-size: 2em;
+}
+h1,h2{
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+body{
+     background: #145c89
+}
+#conteudo,#nomeDoProduto,#imagemDoProduto,#imagemDoProduto img,#dadosTecnicosDoProduto{
+    width: 100%;
+    margin-top: 30px;
+}
+#nomeDoProduto,footer{
+    background: #01436c;
+    }
+ul{
+    font-size: 1.5em;
+}
+figure figcaption{
+    font-size: 1.2em;
+    margin: 5px 15px;
+}
+footer{
+    padding-bottom: 30px;
+    padding-top: 30px;
+    font-size: 1em;
+   
+}

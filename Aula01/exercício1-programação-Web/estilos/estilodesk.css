@@ -1,0 +1,66 @@
+/*Doc CSS*/
+/*Basic resets*/
+* {
+    margin: 0;
+    border: 0;
+    color: #fff;
+    font-family: 'Uncial+Antiqua';
+}
+body {
+    background: #145c89
+}
+#conteudo {
+    width: 960px;
+    margin: 0 auto;
+}
+#nomeDoProduto {
+    background: #01436c;
+}
+#nomeDoProduto h1,
+#nomeDoProduto h2 {
+    text-align: center;
+    font-size: 3em;
+}
+#nomeDoProduto h2 {
+    font-size: 1.5em;
+    margin: 30px;
+}
+#descricaoDoProduto {
+    font-size: 1.5em;
+    text-indent: 20px;
+}
+#descricaoDoProduto p {
+    margin-top: 20px;
+}
+#imagemDoProduto,
+#imagemDoProduto img {
+    margin-top: 30px;
+    width: 100%;
+    height: auto;
+    font-size: 1.2em;
+}
+#dadosTecnicosDoProduto {
+    margin-top: 50px;
+    text-indent: 20px;
+    font-size: 1.5em;
+
+}
+#dadosTecnicosDoProduto h2 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#dadosTecnicosDoProduto ul {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+footer {
+    width: 100%;
+    text-align: center;
+    font-size: 1.4em;
+    float: none;
+    display: block;
+    background: #01436c;
+    padding: 20px 0 20px 0;
+    margin-top: 150px;
+}
