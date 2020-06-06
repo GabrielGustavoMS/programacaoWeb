@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemplo 4</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/formata.css" type="text/css">
+    <script src="js/externo.js"></script>
+    <script>
+       function mostraMsg(){
+           var area=document.getElementById("titulo");
+           area.innerHTML = "Exemplo 4 - JS"
+       }
+        window.onload = function(){
+            mostraMsg();
+            mostraTriplo(7);
+            calculaMedia(9.5, 6.7, 8.5);
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1 id="titulo"></h1></header>
+    <section>
+        <article id="texto1">Triplo: </article>
+        <article id="texto2">Média: </article>
+    </section>
+</body>
+
+</html>

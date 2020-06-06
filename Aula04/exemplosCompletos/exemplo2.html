@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo 2</title>
+    <meta charset="UTF-8"> 
+    <style>
+    	section{
+    		color: red;
+    		font-size: 16pt;    		
+    	}
+    	article{
+    		border: 2px solid red;
+    		width: 300px;
+    		padding: 10px;
+    		text-align: center;
+    	}
+
+    </style>   
+    <script>
+        //função executada no carregamento da página
+        window.onload = function(){
+            document.getElementById("ex1").innerHTML =
+                "JS no cabeçalho do HTML"
+        }
+    </script>
+</head>
+<body>
+    <header>
+		<h1>Exemplo 2 - JS </h1>
+	</header>
+	<section>
+    	<article id="ex1">Segundo Exemplo</article>
+    </section>	
+</body>
+</html>

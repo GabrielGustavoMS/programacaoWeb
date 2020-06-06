@@ -1,0 +1,48 @@
+#titulo {
+    text-decoration: underline;
+    color: magenta;
+    font-family: "Tahoma";
+}
+#texto1,
+#texto2 {
+    font-size: 18pt;
+    border: 1px dashed blue;
+    margin: 10px;
+    padding: 5px;
+    width: 300px;
+}
+article {
+    font-size: 18pt;
+    margin: 15px;
+}
+.redondo {
+    border-radius: 8px;
+}
+nav {
+    background-color: #000;
+    height: 40px;
+    line-height: 30px;
+    margin: 5px 0 0;
+    padding: 0;
+    text-align: center;
+    width: 250px;
+    font-family: "Arial";
+}
+nav ul {
+    list-style: none;
+    margin: 0 auto;
+    width: 800px;
+}
+nav li {
+    float: left;
+    display: inline;
+    margin: 0;
+}
+nav a:link,
+nav a:visited {
+    color: #fff;
+    display: inline-block;
+    height: 30px;
+    padding: 5px 1.5em;
+    text-decoration: none;
+}

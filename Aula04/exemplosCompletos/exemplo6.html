@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemplo 6</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/formata.css" type="text/css">
+    <script src="js/externo.js"></script>
+    <script>
+        window.onload = function(){
+            var btn, nomeA, cursoA;
+            btn = document.getElementById("mostrar");
+            //definir evento para o elemento
+            btn.onclick = function(){
+                document.getElementById("titulo").innerHTML = 
+                    retornaMsg();
+            }
+            nomeA = document.getElementById("op1");
+            nomeA.onclick = function(){
+                document.getElementById("tNome").innerHTML = 
+                    "Fulano de Tal";
+            }
+            cursoA = document.getElementById("op2");
+            cursoA.onclick = function(){
+                document.getElementById("tCurso").innerHTML = 
+                    "Análise e Desenv. de Sistemas";
+            }
+            
+        }
+        
+    </script>
+
+</head>
+
+<body>
+
+    <header>
+        <h2>Exemplo 6 - JS</h2> </header>
+    <nav class="redondo">
+        <ul>
+            <li id="op1"><a href="#">Nome</a></li>
+            <li id="op2"><a href="#">Curso</a></li>
+        </ul>
+    </nav>
+    <article id="titulo"></article>
+    <article id="tNome"></article>
+    <article id="tCurso"></article>
+
+    <button id="mostrar">Mensagem</button>
+
+</body>
+
+</html>

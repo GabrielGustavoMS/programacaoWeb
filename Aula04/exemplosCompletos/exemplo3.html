@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemplo 3</title>
+    <meta charset="UTF-8">
+    <style>
+        h1{
+            color: blue;
+        }
+        #texto {
+            font-size: 16pt;
+            font-family: "Console";
+        }
+        
+    </style>
+    <script>
+        window.onload = function(){
+            var n1, n2, saida;
+            n1 = 10;
+            n2 = 2.5;
+            saida = document.getElementById("texto");
+            saida.innerHTML += "<br /><strong>Soma: </strong>" + (n1+n2);
+            saida.innerHTML += "<br /><strong>Subtração: </strong>" + 
+                (n1-n2);
+            saida.innerHTML += "<br /><strong>Multiplicação: </strong>" + 
+                (n1*n2);
+            saida.innerHTML += "<br /><strong>Divisão: </strong>" + (n1/n2);
+            saida.innerHTML += "<br /><strong>Resto da divisão: </strong>" + (n1%n2);
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Exemplo 3 - JS</h1>
+    </header>
+    <article id="texto">Operações Aritméticas: <br /></article>
+
+</body>
+
+</html>

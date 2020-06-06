@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+   <style>
+    *{
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+#calcularAreaDoRetangulo{
+            border: solid 2px #ccc;
+            width: 180px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            
+            
+        }
+#resultado{
+    display: block;
+    width: 100%;
+    height: 200px;
+    font-size: 2em;
+    
+}
+    </style>
+</head>
+
+<body>
+    <script>
+        function calcular() {
+            var n1 = document.getElementById('base').value;
+            var n2 = document.getElementById('altura').value;
+            var area = n1 * n2 ;
+            resultado = document.getElementById('resultado');
+            resultado.innerHTML = area;
+            
+         
+           
+        }
+        
+    </script>
+    <article id="calcularAreaDoRetangulo">
+    
+    <input type="text" id="base" placeholder="Digite a base do retângulo "/><br>
+    <input type="text" id="altura" placeholder="Digite a altura do retângulo "/><br>
+    <input type="button" id="calcular" value="Calcular" onclick="calcular()"/><br>
+        Área do Retângulo
+        <textarea id="resultado">
+            
+        </textarea> 
+       
+        
+    
+       
+        </article>
+
+</body>
+</html>

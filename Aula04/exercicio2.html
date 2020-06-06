@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+</head>
+<style>
+    #resultado{
+        width: 100px;
+        height: 100px;
+        background: #ccc;
+    }
+    
+    </style>
+<body>
+    <p id="resultado">
+    
+    </p>
+    <script>
+        var peso,altura;
+        peso = prompt("Digite seu peso, por favor: ");
+        altura = prompt("Digite seu altura, por favor: ");      
+        var imc = Number(peso)/Number(altura*altura);
+        console.log(imc);
+        resultado = document.getElementById('resultado');
+       resultado.innerHTML ='Seu imc é:'+ imc;
+    </script>
+    
+    
+</body>
+</html>

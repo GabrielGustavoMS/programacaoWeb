@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo 1</title>
+    <meta charset="UTF-8">    
+    <style>
+    	section{
+    		color: red;
+    		font-size: 16pt;    		
+    	}
+    	#ex1, #ex2{
+    		border: 2px solid red;
+    		width: 300px;
+    		padding: 10px;
+    		text-align: center;
+    	}
+    </style>
+</head>
+<body>
+	<header>
+		<h1>Exemplo 1 - JS </h1>
+	</header>    	
+    	
+    	<section>
+    		<article id="ex1">Primeiro Exemplo</article>
+    		<article id="ex2">Primeiro Exemplo</article>
+    	</section>
+    <script>
+        window.onload = function(){
+            document.getElementById("ex2").innerHTML = 
+                "JS dentro do corpo do HTML"
+        }
+    </script>
+</body>
+</html>

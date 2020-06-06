@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemplo 5</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/formata.css" type="text/css">
+    <script src="js/externo.js"></script>
+    <script>
+       window.onload = function(){
+           var resul, area;
+           
+           resul = somaValores(15.4, 34.7);
+           area = document.getElementById("texto1");
+           area.innerHTML += resul;
+           
+           area = document.getElementById("texto2");
+           area.innerHTML += areaTriangulo(20.8, 33.4)
+       }
+    </script>
+</head>
+
+<body>
+    <section>
+        <article id="texto1">Resultado da Soma: </article>
+        <article id="texto2">Área do Triangulo: </article>
+    </section>
+</body>
+
+</html>
