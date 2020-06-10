@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script src="script.js"></script>
+    <script>
+        window.onload = function(){
+            
+            document.getElementById("botao").onclick = function(){
+                 calcImc();
+    }
+            
+        }
+
+      
+    </script>
+      <style>
+        
+        form{
+            border: solid 3px #000;
+            display: inline-block;
+            padding: 30px;
+            border-radius: 5%;
+            font-size: 1em;
+            
+        }
+        form input{
+            margin-top: 10px;
+            width: 100%;
+        }
+        form h1{
+            font-size: 1.5em;
+        }
+    
+    
+    </style>
+    </head>
+    <body>
+        <form>
+            <h1>Calcular IMC:</h1>
+            <input type="text" id="pesotxt" placeholder="Digite seu peso"/><br>
+            <input type="text" id="alturatxt" placeholder="Digite sua altura"/><br>
+            Seu IMC:
+            <input type="text" readonly placeholder="IMC" id="imcFinal"/><br>
+            Categoria de Peso:
+            <input type="text" readonly placeholder="Categoria" id="conceitoImc"/><br>
+            <input type="button" value="Calcular IMC" id="botao"/><br>
+            
+            <input type="reset" value="Limpar"/>
+        
+        
+        </form>
+    
+    
+    </body>
+
+</html>

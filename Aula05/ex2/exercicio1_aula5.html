@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 5 - exercicio1</title>
+    <script src="script.js"></script>
+    <script>
+     window.onload = function(){
+    document.getElementById("btnCalcular").onclick = function(){
+   calcular();
+    }}
+    </script>
+    <style>
+        
+        form{
+            border: solid 3px #000;
+            display: inline-block;
+            padding: 30px;
+            border-radius: 5%;
+            font-size: 1em;
+            
+        }
+        form input{
+            margin-top: 10px;
+            width: 100%;
+        }
+        form h1{
+            font-size: 1.5em;
+        }
+    
+    
+    </style>
+</head>
+
+<body>
+    <form>
+        <h1>Calcular área de trapézio:</h1><br>
+       <input type="text" placeholder="Digite a altura do trapézio" id="altura"/><br>
+        <input type="text" placeholder="Digite aqui a base menor " id="baseMenorV"/><br>
+        <input type="text" placeholder="Digite aqui a base maior " id="baseMaiorV"/><br>
+        
+      
+        <input type="text" id="resultadotxt" placeholder="Resultado" readonly /><br>
+         <input type="button" id="btnCalcular" value="Calcular"/>
+        <input type="reset" value="Limpar"/>
+        
+    </form>
+    
+</body>
+</html>
