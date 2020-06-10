@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo 4 - Form</title>
+    <meta charset="UTF-8">
+    <link href="css/formata.css" type="text/css" rel="stylesheet">
+    <script src="js/externo.js"></script>
+    <script>
+        window.onload = function(){
+            var btn1, btn2;
+            btn1=document.getElementById("calcular");
+            btn1.onclick = function(){
+                var a, b, resul;
+                b=parseFloat(document.getElementById("base").value);
+                a=parseFloat(document.getElementById("altura").value);
+                resul=areaTriangulo(b,a);
+                document.getElementById("area").innerHTML += resul;
+            }
+            btn2=document.getElementById("media");
+            btn2.onclick = function(){
+                var n1,n2,n3;
+                n1=parseFloat(document.getElementById("n1").value);
+                n2=parseFloat(document.getElementById("n2").value);
+                n3=parseFloat(document.getElementById("n3").value);
+                calculaMedia(n1,n2,n3);
+            }
+            
+        }
+    </script>
+</head>
+<body>
+      <header><h1>Área do triângulo</h1></header>
+       <form action="" method="post" class="fundo">
+            Base: <input type="text" id="base"> 
+            <br>Altura: <input type="text" id="altura"> 
+            <button id="calcular" type="button">Calcular</button>
+            <br><br><article id="area"><strong>Área: </strong></article>
+    </form>
+      <header><h1>Média</h1></header>   
+          <form action="" method="post" class="fundo">
+            Nota 1: <input type="text" id="n1"> 
+            <br>Nota 2: <input type="text" id="n2"> 
+            <br>Nota 3: <input type="text" id="n3"> 
+            <button id="media" type="button">Calcular</button>
+            <br><br><article id="texto2"><strong>Média: </strong></article>           
+        </form>
+        
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo 3 - Form</title>
+    <meta charset="UTF-8">
+    <link href="css/formata.css" type="text/css" rel="stylesheet">
+    <script src="js/externo.js"></script>
+    <script>
+        window.onload = function(){
+            var btn1, btn2;
+            btn1=document.getElementById("calcular");
+            btn1.onclick = function(){
+                var numero=parseFloat(document.getElementById("valor").value);
+                mostraTriplo(numero);
+            }
+            btn2=document.getElementById("somar");
+            btn2.onmouseover = function(){
+                var n1,n2;
+                n1=parseFloat(document.getElementById("valor1").value);
+                n2=parseFloat(document.getElementById("valor2").value);
+                document.getElementById("resul").innerHTML += somaValores(n1,n2);
+            }
+            
+        }
+    </script>
+</head>
+<body>
+      <header><h1>Triplo de um número</h1></header>
+       <form action="" method="post" class="fundo">
+            Número: <input type="text" id="valor"> 
+            <button id="calcular" type="button">Calcular</button>
+            <br><br><article id="texto1"><strong>Resultado: </strong></article>
+    </form>
+      <header><h1>Soma os Valores</h1></header>   
+          <form action="" method="post" class="fundo">
+            Valor 1: <input type="text" id="valor1"> 
+            <br>Valor 2: <input type="text" id="valor2"> 
+            <button id="somar" type="button">Calcular</button>(passe o mouse sobre)
+            <br><br><article id="resul"><strong>Resultado: </strong></article>
+           
+        </form>
+        
+</body>
+</html>

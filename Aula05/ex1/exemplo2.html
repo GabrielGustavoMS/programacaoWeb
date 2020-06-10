@@ -1,0 +1,40 @@
+<!PE html>
+<html>
+<head>
+    <title>Exemplo 2 - Form</title>
+    <meta charset="UTF-8">
+    <link href="css/formata.css" type="text/css" rel="stylesheet">
+    <script src="js/externo.js"></script>
+    <script>
+        window.onload = function(){
+            var btn=document.getElementById("operacoes");
+            btn.onclick = function(){
+                var n1,n2, saida;
+                n1=parseFloat(document.getElementById("valor1").value);
+                n2=parseFloat(document.getElementById("valor2").value);
+                saida=document.getElementById("resul");
+				saida.value = "";
+                saida.value += "\nSoma: " + (n1+n2);
+				saida.value += "\nSubtração: " + 
+                (n1-n2);
+				saida.value += "\nMultiplicação: " + (n1*n2);
+				saida.value += "\nDivisão: " + (n1/n2);
+                saida.value += "\nResto da divisão: " + (n1%n2);
+            }
+        }       
+    </script>
+</head>
+<body>
+    <form action="" method="post">
+      <fieldset class="exemplo">
+       <legend>Operações Aritméticas</legend>
+       <label for="valor1">Valor 1: <input type="text" id="valor1"></label> 
+       <br><label for="valor2">Valor 2: <input type="text" id="valor2"></label> 
+       <br><button id="operacoes" type="button">Calcular</button>
+       <hr>
+       <textarea id="resul">Resultados: </textarea>
+      </fieldset>
+    </form>
+        
+</body>
+</html>
