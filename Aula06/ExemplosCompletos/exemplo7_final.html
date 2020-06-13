@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemplo 7</title>
+    <meta charset="UTF-8">    
+    <link href="css/formata.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.min.js"></script>
+
+    <style>           
+        .borda {
+            border: 3px solid red;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        function alteraTamanho() {
+            tamanho = $("#tam").val() + "pt";
+            $("#texto").css("fontSize", tamanho);
+            //ou $("#texto").css("font-size", tamanho);
+        }
+        $(function() {
+            $("#alteraFonte").click(alteraTamanho());            
+            $("#redblack").click(function() {
+                $("#texto").css({
+                    "background-color": "black", "color": "red"
+                });
+            });
+            $("#blueyellow").click(function() { 
+                $("#texto").css({
+                    "background-color": "yellow", "color": "blue"
+                });
+            });
+            $("#largura").click(function() {
+                tamanho = $("#valor").val() + "px";
+                $("#texto").width(tamanho);
+            });
+            $("article").mouseover(function() {
+                $(this).addClass("borda");
+            });
+            $("article").mouseout(function() {
+                $(this).removeClass("borda");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form name="form1" method="post" action="">
+        Tamanho da Fonte:
+        <input type="text" id="tam">
+        <input type="button" id="alteraFonte" value="Alterar">
+        <br> Cor da fonte e fundo:
+        <input type="button" id="redblack" value="Vermelho e Preto">
+        <input type="button" id="blueyellow" value="Azul e Amarelo">
+        <br> Largura:
+        <input type="text" id="valor">
+        <input type="button" id="largura" value="Alterar">
+    </form>
+    <article id="texto">Apesar da existência de rumores que sugeriam que o Windows 10 estaria disponível a partir do dia 31 de agosto, a Microsoft veio a público para pôr um fim a todo esse mistério e finalmente revelar a data de lançamento desse sistema operacional. Portanto, marquem em suas agendas: dia 29 de julho será o dia em que a nova versão do SO será disponibilizada para os consumidores. Através do blog oficial da companhia, o comunicado é dado em texto e através da assistente digital "mais pessoal do mundo".</article>
+    <br>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exemplo 5</title>
+    <style>
+        input,
+        article {
+            margin-top: 10px;
+        }        
+        span {
+            color: red;
+            font-weight: 600;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#bt").click(mostraDados);
+        });
+        function mostraDados() {
+            $("#res").append(
+                "<span>Nome: </span>" + 
+                $("#nome").val() +
+                "<br><span>E-mail: </span>" + 
+                $("#email").val() + "<br><br>");
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" method="post">       
+        Nome:
+        <input type="text" name="nome" id="nome">
+        <br> E-mail:
+        <input type="text" name="email" id="email">
+        <input type="button" name="bt" id="bt" value="Mostrar">
+    </form>
+    <article id="res"></article>
+</body>
+
+</html>
