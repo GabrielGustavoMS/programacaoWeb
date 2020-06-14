@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Exemplo switch</title>
+<meta charset="utf-8">
+<link href="css/formata.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.min.js"></script>
+<script>
+    function calcular(){
+        var n1 = parseFloat($("#valor1").val());
+        var n2 = parseFloat($("#valor2").val()); 
+        var valorOp = parseInt($('input[name=op]:checked').val());
+        
+        switch (valorOp)            
+        {
+            case 1:             
+                $("#resp").html(n1 + n2);
+                break;
+            case 2:
+                $("#resp").html(n1 - n2);
+                break;
+            default:
+                $("#resp").html("Operador inválido");
+        }
+        
+    }    
+    $(function(){
+        $("#botao").click(calcular);
+    });    
+</script> 
+
+
+</head>
+<body>
+    <form method="post" action="">
+        <p>Valor 1: <input type="text" id="valor1"><br>
+        Valor 2: <input type="text" id="valor2"></p>
+            
+        Escolha uma operação:
+        <br><input type="radio" id="op1" name="op" value="1"> Adição
+        <br><input type="radio" id="op2" name="op" value="2"> Subtração<br>
+        
+        <br><input type="button" value="Calcular" id="botao" />
+        <br><strong>Resposta: </strong><span id="resp"></span>
+    </form>
+</body>
+</html>

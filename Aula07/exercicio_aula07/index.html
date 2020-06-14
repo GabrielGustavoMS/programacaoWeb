@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/funcao.js"></script>
+    <script>
+        //Função de verificação de campo
+
+        function verificaCampo() {
+            $("#nometxts,#rgmtxts,#notaparcialtxts,#notaexertxts,#notaregimenttxts,#notaprojetotxts").empty();
+            $("#nometxts,#rgmtxts,#notaparcialtxts,#notaexertxts,#notaregimenttxts,#notaprojetotxts").removeClass("vazio");
+            if ($("#nometxt").val() == "") {
+                $("#nometxts").addClass("vazio");
+                $("#nometxts").html("O Campo a baixo está vazio, digite os valores correspondentes!!!");
+                return false;
+
+            } else if ($("#rgmtxt").val() == "") {
+                $("#rgmtxts").addClass("vazio");
+                $("#rgmtxts").html("O Campo a baixo está vazio, digite os valores correspondentes!!!");
+                return false;
+
+            } else if ($("#notaparcialtxt").val() == "") {
+                $("#notaparcialtxts").addClass("vazio");
+                $("#notaparcialtxts").html("O Campo a baixoestá vazio, digite os valores correspondentes!!!");
+                return false;
+
+            } else if ($("#notaexertxt").val() == "") {
+                $("#notaexertxts").addClass("vazio");
+                $("#notaexertxts").html("O Campo a baixo está vazio, digite os valores correspondentes!!!");
+                return false;
+
+            } else if ($("#notaprojetotxt").val() == "") {
+                $("#notaprojetotxts").addClass("vazio");
+                $("#notaprojetotxts").html("O Campo a baixo está vazio, digite os valores correspondentes!!!");
+                return false;
+
+            } else if ($("#notaregimenttxt").val() == "") {
+                $("#notaregimenttxts").addClass("vazio");
+                $("#notaregimenttxts").html("O Campo a baixo está vazio, digite os valores correspondentes!!!");
+                return false;
+
+            } else {
+                return true;
+            }
+        }
+
+
+
+
+        $(function() {
+
+
+
+            //Chama funções quando botão calcular é clicado
+            $("#botaoCalcular").click(function() {
+                if (verificaCampo() == true) {
+                    var notaParcial = parseFloat($("#notaparcialtxt").val());
+                    var notaExer = parseFloat($("#notaexertxt").val());
+                    var notaProjeto = parseFloat($("#notaprojetotxt").val());
+                    var notaRegiment = parseFloat($("#notaregimenttxt").val());
+                    console.log(notaParcial);
+                    console.log(notaExer);
+                    console.log(notaProjeto);
+                    console.log(notaRegiment);
+                    //Cálcular média invocar função
+
+                    var media = calcularMedia(notaParcial, notaExer, notaProjeto, notaRegiment);
+                    // Invocação verifica Conceito:
+
+                    var conceito = verificaConceito(media);
+
+
+
+
+                    if (media > 10 || media < 0 || Number.isNaN(notaParcial) && Number.isNaN(notaExer) && Number.isNaN(notaProjeto) && Number.isNaN(notaRegiment)) {
+                        $("#resul, #conceitor").css({
+                            'font-family': "cursive",
+                            'font-size': "2em",
+                            'color': "red"
+                        });
+                        media = ("Valores inseridos estão incorretos");
+                        conceito = ("Conceito Indefinido");
+                        $("#resul").html("<p>" + media + "</p>");
+                        $("#conceitor").html("<p>" + conceito + "</p>");
+
+
+                    } else if (conceito == "Aprovado") {
+                        $("#resul, #conceitor").css({
+                            'font-size': "2em",
+                            'color': "green"
+                        });
+                        $("#resul").html("<p>" + media + "</p>");
+                        $("#conceitor").html("<p>" + conceito + "</p>");
+
+                    } else if (conceito == "Exame") {
+                        $("#resul, #conceitor").css({
+                            'font-size': "2em",
+                            'color': "#e5ce21"
+                        });
+                        $("#resul").html("<p>" + media + "</p>");
+                        $("#conceitor").html("<p>" + conceito + "</p>");
+
+                    } else {
+                        $("#resul, #conceitor").css({
+                            'color': "red",
+                            'font': "2em"
+                        });
+                        $("#resul").html("<p>" + media + "</p>");
+                        $("#conceitor").html("<p>" + conceito + "</p>");
+
+                    }
+
+
+                } //Fim do if 
+
+            });
+
+            //Limpa campos
+            $("#limpar").click(function() {
+                $("input[id='nometxt']").val('');
+                $("input[id='rgmtxt']").val('');
+                $("input[id='notaparcialtxt']").val('');
+                $("input[id='notaexertxt']").val('');
+                $("input[id='notaprojetotxt']").val('');
+                $("input[id='notaregimenttxt']").val('');
+                $("input[id='resul']").val('');
+                $("#resul").empty();
+                $("#conceitor").empty();
+                $("#nometxts,#rgmtxts,#notaparcialtxts,#notaexertxts,#notaregimenttxts,#notaprojetotxts").empty();
+                $("#nometxts,#rgmtxts,#notaparcialtxts,#notaexertxts,#notaregimenttxts,#notaprojetotxts").removeClass("vazio");
+
+
+            });
+
+        });
+    </script>
+    <style>
+        .vazio {
+            color: red;
+        }
+
+        #resul {
+            height: 100px;
+            width: 95%;
+        }
+
+        #conceitor {
+            height: 100px;
+            width: 95%;
+        }
+
+        input {
+            width: 95%;
+            height: 20px;
+            margin: 5px auto;
+        }
+
+        section {
+            width: 400px;
+            margin: 0 auto;
+            padding: 5%;
+            border-radius: 25px;
+            border: solid 4px green;
+            background: #e7faff
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>Calculadora de Média</h1>
+        <h2>Média:</h2>
+        <article id="resul">
+
+
+        </article>
+        <h2>Conceito</h2>
+        <article id="conceitor">
+
+
+        </article>
+        <form>
+            <span id="nometxts"></span><br>
+            <input type="text" placeholder="Digite seu nome" id="nometxt" /><br>
+            <span id="rgmtxts"></span><br>
+            <input type="text" placeholder="Digite seu RGM" id="rgmtxt" /><br>
+            <span id="notaparcialtxts"></span><br>
+            <input type="text" placeholder="Digite a nota parcial" id="notaparcialtxt" /><br>
+            <span id="notaexertxts"></span><br>
+            <input type="text" placeholder="Digite a nota dos exercícios" id="notaexertxt" /><br>
+            <span id="notaprojetotxts"></span><br>
+            <input type="text" placeholder="Digite a nota do projeto" id="notaprojetotxt" /><br>
+            <span id="notaregimenttxts"></span><br>
+            <input type="text" placeholder="Digite a nota regimental" id="notaregimenttxt" /><br>
+           
+
+            <input type="button" value="Calcular Média" id="botaoCalcular" /><br>
+            <input type="button" value="Limpar" id="limpar" />
+
+
+        </form>
+
+    </section>
+
+
+</body>
+
+</html>

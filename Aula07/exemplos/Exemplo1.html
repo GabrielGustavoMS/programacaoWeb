@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Exemplo if...else</title>
+<link href="css/formata.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.min.js"></script>
+<script src="js/funcao.js"></script>
+<script>
+    $(function(){
+        $("#btn").click(function(){
+            $("#positivo").empty();
+            if(parseFloat($("#n1").val())>0){
+                $("#positivo").html("<strong> O número é positivo</strong>");
+            }
+        });
+        
+        $("#maior").click(function(){
+            var nro1 = parseInt($("#n1").val());
+            var nro2 = parseInt($("#n2").val());
+            maior(nro1, nro2);
+        });
+   
+    $("#menor").click(function(){        
+            var nro1 = parseInt($("#n1").val());
+            var nro2 = parseInt($("#n2").val());        
+            $("#resp").html(menor(nro1, nro2));
+        });
+ 
+    
+ });    
+</script>
+</head>
+<body>
+    <form method="post" action="">        
+        Primeiro número: <input type="text" id="n1" /> <input id="btn" type="button" value="É positivo?"/><span id="positivo"></span><br>
+        Segundo número: <input type="text" id="n2" />
+        
+        <br><input id="maior" type="button" value="Maior"/>
+        
+        <p>O maior é: <input type="text" id="resultado" /></p>
+        <input id="menor" type="button" value="Verifica menor e igualdade"/>
+        <br><strong>Resposta: </strong><span id="resp"></span>
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exemplo if ternário</title>
+<meta charset="utf-8">
+<link href="css/formata.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.min.js"></script>
+<script>
+    $(function(){
+    $("#botao").click(function(){
+            var i = $("#idade").val();
+            (i >= 18) ? $("#resul").html("É maior de idade") : $("#resul").html("É menor de idade");
+        });
+    });    
+</script> 
+
+</head>
+<body>
+    <form method="post" action="" class="fundo">
+        Digite a idade: <input type="text" id="idade" />
+        <br><input type="button" value="Verifica maioridade" id="botao" />
+        <br><strong>Resposta: </strong><span id="resul"></span>
+    </form>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício - JQuery</title>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function() {
+            //Cálculo de média baseado no que foi apresentado no início do semestre...
+            function calcularMedia(n1, n2, n3, n4) {
+                //Zera variáveis caso não sejam números
+                if (Number.isNaN(n1)) {
+                    n1 = 0;
+                }
+                if (Number.isNaN(n2)) {
+                    n2 = 0;
+                }
+                if (Number.isNaN(n3)) {
+                    n3 = 0;
+                }
+                if (Number.isNaN(n4)) {
+                    n4 = 0;
+                }
+                //Cálculo da média
+                var media = n1 + n2 + n3 + n4;
+                
+                console.log(media);
+                if (media > 10 || media < 0) {
+                    media = 'Valores de notas inválido';
+                }
+
+                return media;
+
+
+
+            }
+            function validaCampo(){
+                
+            }
+            $('#botao').click(function() {
+                var notaParcial = parseFloat($('#notaParcialtxt').val());
+                var notaExercícios = parseFloat($('#notaExercíciostxt').val());
+                var notaProjeto = parseFloat($('#notaProjetotxt').val());
+                var notaRegimental = parseFloat($('#notaRegimentaltxt').val());
+                var resultado = calcularMedia(notaParcial, notaExercícios, notaProjeto, notaRegimental);
+                if (notaParcial =="" || notaExercícios=="" || notaProjeto=="" || notaRegimental==""){
+                    alert("preencha todos os campos do formulário")
+                    
+                }else{
+                function mudaCor(resultado) {
+                    if (resultado < 6) {
+                        $('#resul').css({
+                            'color': "red"
+                        })
+                    } else {
+                        $('#resul').css({
+                            'color': "green"
+                        })
+                    }
+                }
+                mudaCor(resultado); 
+                }//fim else
+ 
+//                document.getElementById("resul").value = resultado;
+            
+
+            });
+
+            $('#botaoL').click(function() {
+
+                $("input[id = 'nometxt']").val('');
+                $("input[id = 'Rgmtxt']").val('');
+                $("input[id = 'notaParcialtxt']").val('');
+                $("input[id = 'notaExercíciostxt']").val('');
+                $("input[id = 'notaProjetotxt']").val('');
+                $("input[id = 'notaRegimentaltxt']").val('');
+                $("input[id = 'resul']").val('');
+
+
+
+            });
+
+
+
+
+        });
+    </script>
+    <style>
+        section {
+
+            width: 400px;
+            margin: 0 auto;
+
+        }
+
+        form {
+            border: 3px solid green;
+            display: inline-block;
+            padding: 30px;
+            border-radius: 25px;
+
+        }
+
+        form input,
+        form button {
+            display: block;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            font-size: 1.5em;
+
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <form>
+            <h1>Calculadora de Média</h1>
+            <input type="text" placeholder="Nome" name="nome" id="nometxt" required="required" />
+            <input type="text" placeholder="RGM" id="Rgmtxt" required="required" />
+            <input type="text" placeholder="Nota Parcial" id="notaParcialtxt" required="required" />
+            <input type="text" placeholder="Nota Exercícios" id="notaExercíciostxt" required="required" />
+            <input type="text" placeholder="Nota Projetos" id="notaProjetotxt" required="required" />
+            <input type="text" placeholder="Nota Regimental" id="notaRegimentaltxt" required="required" />
+            <input type="button" id="botao" value="Calcular" />
+            <input type="text" placeholder="Sua Média" id="resul"  />
+            <button type="button" id="botaoL">Limpar</button>
+
+
+        </form>
+    </section>
+</body>
+
+</html>
