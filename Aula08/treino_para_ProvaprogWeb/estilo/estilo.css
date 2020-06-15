@@ -1,0 +1,42 @@
+#conteudo {
+    width: 500px;
+    margin: auto;
+    font-family: cursive;
+}
+
+.vazio {
+    color: red;
+
+
+}
+
+#pedido {
+    width: 90%;
+    height: auto;
+    font-size: 14pt;
+   
+    
+}
+
+#nometxt,
+#teltxt,
+#endtxt {
+    width: 100%;
+}
+
+fieldset {
+    margin-top: 30px;
+    padding: 20px;
+}
+.azul{
+    background: rgba(76, 118, 232, 0.85);
+    border: solid 2px #0330ac;
+}
+.vermelho{
+    background: rgba(255, 0, 0, 0.81);
+    border: solid 2px #890404;
+}
+.verde{
+    background: rgba(61, 214, 15, 0.81);
+    border: solid 2px #21741e;
+}

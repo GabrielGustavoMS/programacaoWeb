@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/funcao.js"></script>
+    <script>
+        function verificaCampo() {
+            $("#nomemsg ,#telmsg ,#endmsg ,#tamanhomsg,#saboresmsg").empty();
+            $("#nomemsg ,#telmsg ,#endmsg ,#tamanhomsg,#saboresmsg").removeClass("vazio");
+            if ($("#nometxt").val() == "") {
+                $("#nomemsg").addClass("vazio");
+                $("#nomemsg").html("Preencha o campo acima...");
+                return false;
+
+            } else if ($("#teltxt").val() == "") {
+                $("#telmsg").addClass("vazio");
+                $("#telmsg").html("Preencha o campo acima...");
+                return false;
+            } else if ($("#endtxt").val() == "") {
+                $("#endmsg").addClass("vazio");
+                $("#endmsg").html("Preencha o campo acima ...");
+                return false;
+            } else if ($("input[name=tamanho]:checked").val() == null) {
+                $("#tamanhomsg").addClass("vazio");
+                $("#tamanhomsg").html("Escolha o tamanho da pizza");
+                return false;
+
+            } else if ($("#sabores").val() == "") {
+                $("#saboresmsg").addClass("vazio");
+                $("#saboresmsg").html("Escolha o sabor...");
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        ////////////////////////////////////
+        //Inicialização
+
+        $(function() {
+            $("#finalizar").click(function() {
+                if (verificaCampo() == true) {
+                    var nome = $("#nometxt").val();
+                    var tel = $("#teltxt").val();
+                    var endereço = $("#endtxt").val();
+                    var sabor = $("#sabores").val();
+                    var ingredienteExtra = $("#ingrediente").val();
+                    var tamanho = $('input[name=tamanho]:checked').val();
+                    var preço = calculaPreco(tamanho, ingredienteExtra);
+                    var pagamento = $("#pag").val();
+                    verificaCor(preço);
+                    $("#pedido").html(
+                    "<br> Cliente: "+nome+
+                    "<br> Telefone: "+tel+
+                    "<br> endereço: "+endereço+
+                    "<br> Sabor: "+sabor+
+                    "<br> Extra "+ingredienteExtra+
+                    "<br> Valor a Pagar: "+preço+
+                    "<br> Tamanho: "+ tamanho +
+                    "<br> Forma de Pagamento: "+pagamento
+                    )
+
+
+                } //Fim do If
+            });
+
+        }); //fim da Inicialização
+    </script>
+    <link rel="stylesheet" href="estilo/estilo.css" type="text/css" />
+</head>
+
+<body>
+    <section id="conteudo">
+        <h1></h1>
+        <form>
+            <fieldset>
+                <legend>Monte a sua pizza</legend>
+                <h2>Nome:</h2><br>
+                <input type="text" id="nometxt" /><span id="nomemsg"></span><br>
+                <h2>Telefone</h2><br>
+                <input type="text" id="teltxt" /><span id="telmsg"></span><br>
+                <h2>Endereço:</h2><br>
+                <input type="text" id="endtxt" /><span id="endmsg"></span><br>
+            </fieldset>
+            <fieldset id="pedido"></fieldset>
+            <fieldset>
+                <h2>Dados do pedido:</h2><br>
+                <h2>Tamanho:</h2><br>
+                <span id="tamanhomsg"></span><br> Pequena:
+                <input type="radio" name="tamanho" value="pequeno" /> Media:
+                <input type="radio" name="tamanho" value="médio" /> Grande:
+                <input type="radio" name="tamanho" value="grande" /><br>
+                <h2>Sabores</h2>
+                <span id="saboresmsg"></span><br>
+                <select id="sabores">
+                    <option value="">Escolha Um Sabor</option>
+                    <option value="1">calabresa</option>
+                    <option value="2">4 Queijos</option>
+                    <option value="3">Frango</option>
+                </select><br>
+                <h2>Ingrediente extra</h2>
+                <input list="extra" placeholder="extra" id="ingrediente" />
+                <datalist id="extra">
+                    <option value="Tomate"></option>
+                    <option value="Cebola"></option>
+                    <option value="Azeitona"></option>
+                </datalist>
+
+            </fieldset>
+            <fieldset>
+                <legend>Forma de Pagamento:</legend>
+
+                <select id="pag">
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="Débito">Débito</option>
+                    <option value="Crédito">Crédito</option>
+                </select>
+
+            </fieldset>
+            <input type="button" id="finalizar" value="Fechar Pedido" />
+        </form>
+    </section>
+</body>
+
+</html>
