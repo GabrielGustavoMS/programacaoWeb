@@ -1,0 +1,12 @@
+section{
+    width: 500px;
+    margin: 0 auto;
+}
+
+
+h1,h2,h3{
+    font-weight: 900;
+}
+.atencao{
+    color: red;
+}

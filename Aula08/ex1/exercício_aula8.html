@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <title>Exercício-08</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/funcao.js"></script>
+    <script>
+        
+
+            function verificaCampo() {
+                $("#vako, #vako1, #vako2, #vakoTamanho,#vakoSabor  ").empty();
+                $("#vako, #vako1, #vako2, #vakoTamanho,#vakoSabor ").removeClass("atencao");
+
+
+                if ($("#nometxt").val() == "") {
+                    $("#vako").addClass("atencao");
+                    $("#vako").html("<strong>Preencha o campo ao lado !!!</strong>");
+                    return false;
+                }
+                
+                else if ($("#telefonetxt").val() == "") {
+                        $("#vako1").addClass("atencao");
+                        $("#vako1").html("<strong>Preencha o campo ao lado !!!</strong>");
+                        return false;
+                    }
+                
+                else if ($("#endereçotxt").val() == "") {
+                            $("#vako2").addClass("atencao");
+                            $("#vako2").html("<strong>Preencha o campo ao lado !!!</strong>");
+                            return false;
+                        }
+                
+                else if($("input[name=tamanho]:checked").val()==null){
+                    $("#vakoTamanho").addClass("atencao");
+                    $("#vakoTamanho").html("<strong>Preencha o campo ao lado !!!</strong>");
+                    return false;
+                }else if($("#sabores").val()==""){
+                    $("#vakoSabor").addClass("atencao");
+                    $("#vakoSabor").html("<strong>Preencha o campo ao lado !!!</strong>");
+                         
+                         }
+                
+                   
+                        
+                
+                 else { return true;
+                      }
+                    
+
+                }//Fim da verificação
+        $(function() {
+            $("#botao").click(function(){
+                if(verificaCampo()==true){
+                    
+                    
+                    
+                    
+                }
+                
+                
+                
+            });
+
+            
+        });
+    </script>
+</head>
+
+<body>
+    <section>
+    <h1>Monte sua pizza</h1>
+    <form>
+        <h2>Dados do Cliente</h2>
+
+        <h3>Nome:</h3><br>
+        <input type="text" id="nometxt" /><span id="vako"></span>
+        <h3>Telefone:</h3><br>
+        <input type="text" id="telefonetxt" /><span id="vako1"></span>
+        <h3>Endereço:</h3><br>
+        <input type="text" id="endereçotxt" /><br><span id="vako2"></span>
+
+
+
+        <h2>Dados do pedido</h2>
+        <h3> Tamanho:</h3><br>
+        <input type="radio" name="tamanho" value="pequena" id="pequena" /><label for="pequena">Pequena</label>
+        <input type="radio" name="tamanho" value="media" id="media" /><label for="media">Média</label>
+        <input type="radio" name="tamanho" value="grande" id="grande" /><label for="grande">Grande</label>
+        <span id="vakoTamanho"></span>
+
+        <h3>Sabores:</h3>
+
+        <select id="sabores">
+        <optgroup>
+            <option value=""></option>
+            <option value="Calabresa">Calabresa</option>
+            <option value="4queijos">4 Queijos</option>
+            <option value="Chocolate">Chocolate</option>
+        
+            </optgroup>
+        </select>
+        <span id="vakoSabor"></span>
+        <br>
+        <h3>Ingrediente Extra:</h3>
+        <input list="extra" />
+
+        <datalist id="extra">
+        <option value="Cebola"></option>
+        <option value="Tomate"></option>
+        <option value="Milho"></option>
+        <option value="Morango"></option>
+        </datalist>
+
+
+        <h3>Forma de Pagamento</h3>
+
+
+        <select id="formaPag">
+        <option value="Dinheiro">Dinheiro</option>
+        <option value="CartãoDeCrédito">Cartão de Crédito</option>
+        <option value="CartãoDeDébito">Cartão de Débito</option>
+        </select><br>
+        <input type="button" id="botao" value="Fechar Pedido" />
+    </form>
+        <article id="pedido">
+        
+        
+        
+        </article>
+        </section>
+
+</body>
+</html>

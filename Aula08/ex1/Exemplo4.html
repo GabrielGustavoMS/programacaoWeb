@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bomba Combustível</title>
+    <meta charset="UTF-8">
+    <link href="css/formata.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/funcao.js"></script>
+    <script>
+        function validaCampos() {
+            $("#vazio, #tc, #fpag, #fr").empty();
+            $("#vazio, #tc, #fpag, #fr").removeClass("alerta");
+            if ($("#litros").val() == "") {
+                $("#vazio").addClass("alerta");
+                $("#vazio").html("Preencha a quantidade de litros abastecido");
+                return false;
+            } else {
+                tipo = $('input[name=comb]:checked').val();
+                if (tipo != "diesel" && tipo != "gasolina" && tipo != "etanol") {
+                    $("#tc").addClass("alerta");
+                    $("#tc").html("Escolha um combustível");
+                    return false;
+                } else {
+                    if ($("#pag").val() == "") {
+                        $("#fpag").addClass("alerta");
+                        $("#fpag").html("Escolha uma forma de pagamento");
+                        return false;
+
+                    } else {
+                        if ($("#f").val() == "") {
+                            $("#fr").addClass("alerta");
+                            $("#fr").html("Escolha um frentista");
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+        }
+        $(function() {
+            $("#calc").click(
+                function() {
+                    var qtde, r;
+                    if (validaCampos() == true) {
+                        qtde = parseFloat($("#litros").val());
+                        tipo = $('input[name=comb]:checked').val();
+                        r = total(qtde, tipo);
+                        $("#resp").html(r.toFixed(2));
+                        $("#resp").addClass("alerta");
+                        $("#historico").append(
+                            "<br>Tipo de Combustível: " + tipo +
+                            "<br>Forma de pagamento: " + $("#pag").val() +
+                            "<br>Frentista: " + $("#f").val() +
+                            "<br>Litros: " + qtde +
+                            "<br>Total: R$" + r.toFixed(2) + "<br />");
+
+                    }
+                })
+        })
+    </script>
+</head>
+
+<body>
+    <h3>Abastecimento</h3>
+    <form name="form1" method="post" action="">
+        <p><strong>Quantidade de litros: </strong><input type="text" id="litros" name="litros"><span id="vazio"></span>
+        </p>
+        <p><strong>Escolha o tipo de combustível</strong><br />
+            <input type="radio" name="comb" id="d" value="diesel" /><label for="diesel">Diesel</label>
+
+            <input type="radio" name="comb" id="g" value="gasolina" /><label for="gasolina">Gasolina</label>
+
+            <input type="radio" name="comb" id="e" value="etanol" /><label for="etanol">Etanol</label>
+        </p>
+        <span id="tc"></span>
+        <p><strong>Forma de pagamento: </strong>
+            <select id="pag">
+            <option value=""></option>
+            <option value="Dinheiro">Dinheiro </option>
+            <option value="Débito">Débito </option>
+            <option value="Crédito">Crédito </option>
+        </select>
+            <span id="fpag"></span>
+        </p>
+        <p><strong>Frentista: </strong>
+            <input list="frentista" name="frente" id="f" />
+            <datalist id="frentista">
+            <option value="Ayrton Senna">
+            <option value="Hortência">
+            <option value="Gustavo Borges">
+            <option value="Torben Grael">
+            <option value="Oscar Schmidt">
+            <option value="Ana Moser">
+            <option value="Daiane dos Santos">             
+        </datalist><span id="fr"></span> </p>
+
+        <p><strong>Total a pagar: </strong><span id="resp"></span></p>
+        <input type="button" id="calc" value="Calcular" />
+    </form>
+    <h3>Histórico</h3>
+    <div id="historico"></div>
+</body>
+</html>
