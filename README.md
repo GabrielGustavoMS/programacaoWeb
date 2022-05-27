@@ -1,5 +1,7 @@
 # Programação Web
 
+![Imagem meramente ilustrativa - Thumb](./thumb.jpg)
+
 Esse repositório contém alguns sites, exercícios, exemplos, projetos e demonstrações desenvolvidos em 2018, durante a disciplina de Programação Web, do curso de Ciências da Computação da Universidade Cruzeiro do Sul.
 
 Abaixo deixo os links do conteúdo desenvolvido:
